@@ -29,6 +29,37 @@ Rather than defining paths one by one and specifying source and target for each 
 
 ## Getting Started
 
+## Methods
+
+### addRectangularNodePrototype
+> public void addRectangularNodePrototype​(java.lang.String prototypeName, double width, double height)
+
+**Adds a new rectangular node prototype to the pool.**
+
+*Parameters:*
+
+prototypeName - User specified name of the prototype. Used as an identifier.
+
+width - Width of the prototype.
+
+height - Height of the prototype.
+
+### addAttractorToRectangularNodePrototype
+
+> public void addAttractorToRectangularNodePrototype​(java.lang.String prototypeName, double relX, double relY, int orientation)
+
+**Adds an attractor to an existing rectangular node prototype.**
+
+*Parameters:*
+
+prototypeName - Name of the prototype to add the attractor.
+
+relX - X-coordinate of the attractor relative to the prototype origin.
+
+relY - Y-coordinate of the attractor relative to the prototype origin.
+
+orientation - Orientation of the attractor in degrees.
+
 ## Example Implementation
 
 The following code generates the layout in Figure 5.
