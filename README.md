@@ -29,87 +29,260 @@ Rather than defining paths one by one and specifying source and target for each 
 
 ## Getting Started
 
+These instructions will get Alfalo integrated with AnyLogic. 
+
+### Prerequisite
+
+You need to have AnyLogic with any valid license (PLE, University, or Professional) installed on your machine.
+
+### Installation
+
+1. Download the Alfalo.jar file (from the [releases](https://pages.github.com/)) and place it somewhere it won't be moved (or accidentally deleted).
+2. Add it to your AnyLogic palette. A step-by-step explanation of how to do this is available in the AnyLogic help article ["Managing Libraries"](https://pages.github.com/).
+3. You should see a new palette item for Alfalo with the Alfalo Layout Generator agent.
+
 ## Methods
 
 ### addRectangularNodePrototype
 > public void addRectangularNodePrototype​(java.lang.String prototypeName, double width, double height)
 
-**Adds a new rectangular node prototype to the pool.**
+*Description:*
+
+Adds a new rectangular node prototype to the pool.
 
 *Parameters:*
 
-prototypeName - User specified name of the prototype. Used as an identifier.
+* prototypeName - User specified name of the prototype. Used as an identifier.
 
-width - Width of the prototype.
+* width - Width of the prototype.
 
-height - Height of the prototype.
+* height - Height of the prototype.
 
 ### addAttractorToRectangularNodePrototype
 
 > public void addAttractorToRectangularNodePrototype​(java.lang.String prototypeName, double relX, double relY, int orientation)
 
-**Adds an attractor to an existing rectangular node prototype.**
+*Description:*
+
+Adds an attractor to an existing rectangular node prototype.
 
 *Parameters:*
 
-prototypeName - Name of the prototype to add the attractor.
+* prototypeName - Name of the prototype to add the attractor.
 
-relX - X-coordinate of the attractor relative to the prototype origin.
+* relX - X-coordinate of the attractor relative to the prototype origin.
 
-relY - Y-coordinate of the attractor relative to the prototype origin.
+* relY - Y-coordinate of the attractor relative to the prototype origin.
 
-orientation - Orientation of the attractor in degrees.
+* orientation - Orientation of the attractor in degrees.
+
+### addNodeGroupPrototype
+
+> public void addNodeGroupPrototype​(java.lang.String prototypeName, double width, double height)
+
+*Description:*
+
+Adds a new node group prototype to the pool.
+
+*Parameters:*
+
+* prototypeName - User specified name of the prototype. Used as an identifier.
+
+* width - Width of the prototype.
+
+* height - Height of the prototype.
+
+### addRectangularNodeToNodeGroupPrototype
+
+> public void addRectangularNodeToNodeGroupPrototype​(java.lang.String nodeGroupPrototypeName, java.lang.String rectangularNodePrototypeName, double relX, double relY, boolean flipX, boolean flipY, int rotation)
+
+*Description:*
+
+Adds a rectangular node to an exiting node group prototype.
+
+*Parameters:*
+
+* nodeGroupPrototypeName - Name of the node group prototype to add the rectangular node.
+
+* rectangularNodePrototypeName - Name of the rectangular node prototype of the rectangular node to be added.
+
+* relX - X-coordinate of the prototype origin of the rectangular node relative to the node group prototype origin.
+
+* relY - Y-coordinate of the prototype origin of the rectangular node relative to the node group prototype origin.
+
+* flipX - Whether the rectangular node to be added is flipped along the X-axis from its prototype.
+
+* flipY - Whether the rectangular node to be added is flipped along the Y-axis from its prototype.
+
+* rotation - The degrees of rotation of the rectangular node from its prototype. (Must be one of the following values: 0, 90, 180, 270)
+
+### putRectangularNode
+
+> public com.anylogic.engine.markup.RectangularNode putRectangularNode​(java.lang.String rectangularNodePrototype, double x, double y, boolean flipX, boolean flipY, int rotation)
+
+*Description:*
+
+Generates a rectangular node instance from prototype and places into the layout.
+
+*Parameters:*
+
+* rectangularNodePrototype - Name of the rectangular node prototype of the rectangular node to be placed.
+
+* x - X-coordinate of the prototype origin of the rectangular node.
+
+* y - Y-coordinate of the prototype origin of the rectangular node.
+
+* flipX - Whether the rectangular node is flipped along the X-axis from its prototype.
+
+* flipY - Whether the rectangular node is flipped along the Y-axis from its prototype.
+
+* rotation - The degrees of rotation of the rectangular node from its prototype. (Must be one of the following values: 0, 90, 180, 270)
+
+*Returns:*
+
+The rectangular node generated.
+
+### putRectangularNode
+
+> public void putRectangularNode​(com.anylogic.engine.markup.RectangularNode node)
+
+*Description:*
+
+Places a rectangular node instance into the layout.
+
+*Parameters:*
+
+* node - Rectangular node instance to be placed into the layout.
+
+### putNodeGroup
+
+> public java.util.ArrayList<com.anylogic.engine.markup.RectangularNode> putNodeGroup​(java.lang.String nodeGroupPrototype, double x, double y, boolean flipX, boolean flipY, int rotation)
+
+*Description:*
+
+Generates a node group instance from prototype and places into the layout.
+
+*Parameters:*
+
+* nodeGroupPrototype - Name of the node group prototype of the node group to be placed.
+
+* x - X-coordinate of the prototype origin of the node group.
+
+* y - Y-coordinate of the prototype origin of the node group.
+
+* flipX - Whether the node group is flipped along the X-axis from its prototype.
+
+* flipY - Whether the node group is flipped along the Y-axis from its prototype.
+
+* rotation - The degrees of rotation of the node group from its prototype. (Must be one of the following values: 0, 90, 180, 270)
+
+*Returns:*
+
+The ArrayList of rectangular nodes generated in sequence of addition to the node group prototype.
+
+### getNodeAttractors
+
+> public java.util.ArrayList<com.anylogic.engine.markup.Attractor> getNodeAttractors​(com.anylogic.engine.markup.Node n)
+
+*Description:*
+
+Returns all attractors in a generated node in sequence of addition to the node prototype.
+
+*Parameters:*
+* n - Node to get attractors.
+
+*Returns:*
+
+ArrayList of attractors in sequence of addition to the node prototype.
+
+### addAlfaloPath
+
+> public void addAlfaloPath​(double inX, double inY, double outX, double outY, boolean bidirectional)
+
+*Description:*
+
+Adds an Alfalo Path. All added alfalo paths will be configured and generated in the final layout after calling generateLayout().
+
+*Parameters:*
+
+* inX - X-coordinate of the source of the Alfalo path.
+
+* inY - Y-coordinate of the source of the Alfalo path.
+
+* outX - X-coordinate of the target of the Alfalo path.
+
+* outY - Y-coordinate of the target of the Alfalo path.
+
+* bidirectional - Whether this path is bidirectional.
+
+### addAlfaloPath
+
+> public void addAlfaloPath​(double[] path, boolean bidirectional)
+
+*Description:*
+
+Adds an Alfalo Path. All added alfalo paths will be configured and generated in the final layout after calling generateLayout().
+
+*Parameters:*
+
+* path - Array of coordinates that define the path. (e.g. [x1, y1, x2, y2, x3, y3])
+
+* bidirectional - Whether this path is bidirectional.
+
 
 ## Example Implementation
 
 The following code generates the layout in Figure 5.
 
-<img src="https://github.com/m1ng2e/Alfalo/assets/62451645/81716939-5e5e-420c-8d9c-67d783fddb0c" width="450" height="300">
+<img src="https://github.com/m1ng2e/Alfalo/assets/62451645/8ac11355-6f09-406f-83f2-8e5463397de2" width="450" height="300">
 
 *Figure 5: Example Layout*
 
 ```
+ArrayList<RectangularNode> rn_list = new ArrayList();
+
 //Generate a rectangular node with AnyLogic node constructor
 RectangularNode rn = new RectangularNode();
 rn.setSize(220, 120);
 rn.setPos(-110, -60, 0);
 Attractor a = new Attractor(100, 20, 30);
 rn.addAttractor(a);
-Alfalo.putRectangularNode(rn);
+alfaloLayoutGenerator.putRectangularNode(rn);
+rn_list.add(rn);
 
 //Define a node group with two rectangular nodes in it
-Alfalo.addNodeGroupPrototype("My node group", 300, 200);
-Alfalo.addRectangularNodePrototype("My rectangular node 1", 30, 60);
-Alfalo.addAttractorToRectangularNodePrototype("My rectangular node 1", 20, 40, 0);
-Alfalo.addRectangularNodePrototype("My rectangular node 2", 10, 30);
-Alfalo.addAttractorToRectangularNodePrototype("My rectangular node 2", 8, 20, 0);
-Alfalo.addRectangularNodeToNodeGroupPrototype("My node group", "My rectangular node 1", 200., 100., true, false, 90);
-Alfalo.addRectangularNodeToNodeGroupPrototype("My node group", "My rectangular node 2", 100, 100, false, false, 0);
+alfaloLayoutGenerator.addNodeGroupPrototype("My node group", 300, 200);
+alfaloLayoutGenerator.addRectangularNodePrototype("My rectangular node 1", 30, 60);
+alfaloLayoutGenerator.addAttractorToRectangularNodePrototype("My rectangular node 1", 20, 40, 0);
+alfaloLayoutGenerator.addRectangularNodePrototype("My rectangular node 2", 10, 30);
+alfaloLayoutGenerator.addAttractorToRectangularNodePrototype("My rectangular node 2", 8, 20, 0);
+alfaloLayoutGenerator.addRectangularNodeToNodeGroupPrototype("My node group", "My rectangular node 1", 200., 100., true, false, 90);
+alfaloLayoutGenerator.addRectangularNodeToNodeGroupPrototype("My node group", "My rectangular node 2", 100, 100, false, false, 0);
 
 //Manipulate and place four instances of the node group into the layout
-ArrayList<RectangularNode> rn_list = Alfalo.putNodeGroup("My node group", 0, 0, true, true, 0);
-rn_list.addAll(Alfalo.putNodeGroup("My node group", 0, 0, false, false, 0));
-rn_list.addAll(Alfalo.putNodeGroup("My node group", 0, 0, true, false, 0));
-rn_list.addAll(Alfalo.putNodeGroup("My node group", 0, 0, false, true, 0));
+rn_list.addAll(alfaloLayoutGenerator.putNodeGroup("My node group", 0, 0, true, true, 0));
+rn_list.addAll(alfaloLayoutGenerator.putNodeGroup("My node group", 0, 0, false, false, 0));
+rn_list.addAll(alfaloLayoutGenerator.putNodeGroup("My node group", 0, 0, true, false, 0));
+rn_list.addAll(alfaloLayoutGenerator.putNodeGroup("My node group", 0, 0, false, true, 0));
 
 //Manipulate and place two instances of the rectangular node into the layout
-rn_list.add(Alfalo.putRectangularNode("My rectangular node 1", -140, 15, true, false, 90));
-rn_list.add(Alfalo.putRectangularNode("My rectangular node 1", 200, -15, false, false, 90));
+rn_list.add(alfaloLayoutGenerator.putRectangularNode("My rectangular node 1", -140, 15, true, false, 90));
+rn_list.add(alfaloLayoutGenerator.putRectangularNode("My rectangular node 1", 200, -15, false, false, 90));
 
-//Add Alfalo Paths
+//Add alfaloLayoutGenerator Paths
 double[][] alf_paths = new double[][] {{-170, -115, -170, 115, 170, 115, 170, -115, -170, -115},
-                                      {0, -115, 0, 115},
-                                      {-105, -100, -105, 100},
-                                      {105, -100, 105, 100},
-                                      {-170, -85, 170, -85},
-                                      {-170, 85, 170, 85},
-                                      {-170, 0, 170, 0}};
+				   {0, -115, 0, 115},
+				   {-105, -100, -105, 100},
+				   {105, -100, 105, 100},
+				   {-170, -85, 170, -85},
+				   {-170, 85, 170, 85},
+				   {-170, 0, 170, 0}};
 for (double[] alf_path: alf_paths){
-	Alfalo.addAlfaloPath(alf_path, false);
+	alfaloLayoutGenerator.addAlfaloPath(alf_path, false);
 	}
 	
 //Generate Layout
-presentation.add(Alfalo.generateLayout(this, "myNetwork", "myLevel", SHAPE_DRAW_2D3D, 0, false));
+presentation.add(alfaloLayoutGenerator.generateLayout(this, "myNetwork", "myLevel", SHAPE_DRAW_2D3D, 0, false));
 
 //Initialize triangle agents to show attractors in nodes
 for (RectangularNode RN: rn_list){
