@@ -284,7 +284,7 @@ for (double[] alf_path: alf_paths){
 //Generate Layout
 presentation.add(alfaloLayoutGenerator.generateLayout(this, "myNetwork", "myLevel", SHAPE_DRAW_2D3D, 0, false));
 
-//Initialize triangle agents to show attractors in nodes
+//Initialize circle agents to show attractors in nodes
 for (RectangularNode RN: rn_list){
 	Circle c = new Circle();
 	c.goToPopulation(circles);
