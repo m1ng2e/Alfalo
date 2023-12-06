@@ -37,8 +37,8 @@ You need to have AnyLogic with any valid license (PLE, University, or Profession
 
 ### Installation
 
-1. Download the Alfalo.jar file (from the [releases](https://pages.github.com/)) and place it somewhere it won't be moved (or accidentally deleted).
-2. Add it to your AnyLogic palette. A step-by-step explanation of how to do this is available in the AnyLogic help article ["Managing Libraries"](https://pages.github.com/).
+1. Download the Alfalo.jar file (from the [releases](https://github.com/m1ng2e/Alfalo/releases)) and place it somewhere it won't be moved (or accidentally deleted).
+2. Add it to your AnyLogic palette. A step-by-step explanation of how to do this is available in the AnyLogic help article ["Managing Libraries"](https://anylogic.help/advanced/libraries/managing-libraries.html#managing-libraries).
 3. You should see a new palette item for Alfalo with the Alfalo Layout Generator agent.
 
 ## Methods
