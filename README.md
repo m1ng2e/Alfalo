@@ -232,7 +232,7 @@ Adds an Alfalo Path. All added alfalo paths will be configured and generated in 
 
 ## Example Implementation
 
-The following code generates the layout in Figure 5.
+The following code generates the layout in Figure 5. For implementation model please download the AnyLogic model file [Alfalo_Example1.zip](https://github.com/m1ng2e/Alfalo/blob/main/Alfalo_Example1.zip).
 
 <img src="https://github.com/m1ng2e/Alfalo/assets/62451645/8ac11355-6f09-406f-83f2-8e5463397de2" width="450" height="300">
 
