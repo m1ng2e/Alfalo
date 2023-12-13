@@ -25,7 +25,7 @@ Manipulation of rectangular nodes and node groups means applying flipping and ro
 
 **Fast Path Generation**:
 
-Rather than defining paths one by one and specifying source and target for each path, like how it is normally done in AnyLogic, the Alfalo library enables easy paths generation by requiring less parameters from the users. When an Alfalo path is defined to cross one or more rectangular nodes, multiple paths connecting the rectangular nodes will be automatically generated, as shown in Figure 3. When two Alfalo paths are defined to cross each other, four paths connected by a point node will be automatically generated, as shown in Figure 4. The library will automatically figure out the source and target of each generated path.
+Rather than defining paths one by one and specifying source and target for each path, like how it is normally done in AnyLogic, the Alfalo library enables easy paths generation by requiring less parameters from the users by using Alfalo paths. When an Alfalo path is defined to cross one or more rectangular nodes, multiple paths connecting the rectangular nodes will be automatically generated, as shown in Figure 3. When two Alfalo paths are defined to cross each other, four paths connected by a point node will be automatically generated, as shown in Figure 4. The library will automatically figure out the source and target of each generated path.
 
 <img src="https://github.com/m1ng2e/Alfalo/assets/62451645/4c7f804d-045d-40be-b33e-04c63face41e" width="700" height="230">
 
