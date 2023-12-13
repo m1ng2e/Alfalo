@@ -1,6 +1,12 @@
 # Alfalo
 Alfalo is an **A**ny**L**ogic Library for **Fa**st **L**ay**o**ut Generation. It provides a easy way to generate complex layout programmatically in AnyLogic Models. 
 
+**Use case:** 
+
+There are cases where users may want to generate layout networks in AnyLogic programmatically with input from some databases, instead of drawing directly in AnyLogic software. For example, when the end user receives a stand-alone java application version of the simulation from the model builder, the end user do not have access to the wonderful AnyLogic space markup APIs, then to generate layout networks from databases enables the end user to test different layout networks. *The Alfalo library simplifies the layout network database generation process.*
+
+## Main Features
+
 There are two main features: `Rectangular Node/Node Group Manipulation` and `Fast Path Generation`.
 
 **Rectangular Node/Node Group Manipulation**:
