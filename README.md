@@ -148,7 +148,7 @@ Adds an attractor to an existing rectangular node prototype.
 
 ### addNodeGroupPrototype
 
-> public void addNodeGroupPrototype​(java.lang.String prototypeName, double width, double height)
+> public void addNodeGroupPrototype​(java.lang.String prototypeName)
 
 *Description:*
 
@@ -157,10 +157,6 @@ Adds a new node group prototype to the pool.
 *Parameters:*
 
 * prototypeName - User specified name of the prototype. Used as an identifier.
-
-* width - Width of the prototype.
-
-* height - Height of the prototype.
 
 ### addRectangularNodeToNodeGroupPrototype
 
