@@ -51,65 +51,13 @@ You need to have AnyLogic with any valid license (PLE, University, or Profession
 
 ## Example Implementation
 
-The following code generates the layout in Figure 5. For implementation model please download the AnyLogic model file [Alfalo_Example1.zip](https://github.com/m1ng2e/Alfalo/blob/main/Alfalo_Example1.zip).
+The layout in Figure 5 is generated with the AnyLogic model [Alfalo Library Example.zip](https://github.com/m1ng2e/Alfalo/files/14968433/Alfalo.Library.Example.zip).
 
-<img src="https://github.com/m1ng2e/Alfalo/assets/62451645/8ac11355-6f09-406f-83f2-8e5463397de2" width="450" height="300">
+
+![Layout Example](https://github.com/m1ng2e/Alfalo/assets/62451645/d27305b2-e332-40bf-a7d2-bbaab37a2b37)
+
 
 *Figure 5: Example Layout*
-
-```
-ArrayList<RectangularNode> rn_list = new ArrayList();
-
-//Generate a rectangular node with AnyLogic node constructor
-RectangularNode rn = new RectangularNode();
-rn.setSize(220, 120);
-rn.setPos(-110, -60, 0);
-Attractor a = new Attractor(100, 20, 30);
-rn.addAttractor(a);
-alfaloLayoutGenerator.putRectangularNode(rn);
-rn_list.add(rn);
-
-//Define a node group with two rectangular nodes in it
-alfaloLayoutGenerator.addNodeGroupPrototype("My node group", 300, 200);
-alfaloLayoutGenerator.addRectangularNodePrototype("My rectangular node 1", 30, 60);
-alfaloLayoutGenerator.addAttractorToRectangularNodePrototype("My rectangular node 1", 20, 40, 0);
-alfaloLayoutGenerator.addRectangularNodePrototype("My rectangular node 2", 10, 30);
-alfaloLayoutGenerator.addAttractorToRectangularNodePrototype("My rectangular node 2", 8, 20, 0);
-alfaloLayoutGenerator.addRectangularNodeToNodeGroupPrototype("My node group", "My rectangular node 1", 200., 100., true, false, 90);
-alfaloLayoutGenerator.addRectangularNodeToNodeGroupPrototype("My node group", "My rectangular node 2", 100, 100, false, false, 0);
-
-//Manipulate and place four instances of the node group into the layout
-rn_list.addAll(alfaloLayoutGenerator.putNodeGroup("My node group", 0, 0, true, true, 0));
-rn_list.addAll(alfaloLayoutGenerator.putNodeGroup("My node group", 0, 0, false, false, 0));
-rn_list.addAll(alfaloLayoutGenerator.putNodeGroup("My node group", 0, 0, true, false, 0));
-rn_list.addAll(alfaloLayoutGenerator.putNodeGroup("My node group", 0, 0, false, true, 0));
-
-//Manipulate and place two instances of the rectangular node into the layout
-rn_list.add(alfaloLayoutGenerator.putRectangularNode("My rectangular node 1", -140, 15, true, false, 90));
-rn_list.add(alfaloLayoutGenerator.putRectangularNode("My rectangular node 1", 200, -15, false, false, 90));
-
-//Add alfaloLayoutGenerator Paths
-double[][] alf_paths = new double[][] {{-170, -115, -170, 115, 170, 115, 170, -115, -170, -115},
-				   {0, -115, 0, 115},
-				   {-105, -100, -105, 100},
-				   {105, -100, 105, 100},
-				   {-170, -85, 170, -85},
-				   {-170, 85, 170, 85},
-				   {-170, 0, 170, 0}};
-for (double[] alf_path: alf_paths){
-	alfaloLayoutGenerator.addAlfaloPath(alf_path, false);
-	}
-	
-//Generate Layout
-presentation.add(alfaloLayoutGenerator.generateLayout(this, "myNetwork", "myLevel", SHAPE_DRAW_2D3D, 0, false));
-
-//Initialize circle agents to show attractors in nodes
-for (RectangularNode RN: rn_list){
-	Circle c = new Circle();
-	c.goToPopulation(circles);
-	c.jumpTo(RN);
-	}
-```
 
 ## Methods
 
