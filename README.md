@@ -35,6 +35,10 @@ Rather than defining paths one by one and specifying source and target for each 
 
 *Figure 4: Alfalo Paths Crossing Each Other*
 
+## Memory Feature
+
+The memory feature saves the layout generated to a text file, so that the same layout does not need to be recalculated for each experiment instance. This is especially beneficial when doing replicated experiments.
+
 ## Getting Started
 
 These instructions will get Alfalo integrated with AnyLogic. 
