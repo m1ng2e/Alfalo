@@ -55,7 +55,8 @@ You need to have AnyLogic with any valid license (PLE, University, or Profession
 
 ## Example Implementation
 
-The layout in Figure 5 is generated with the AnyLogic model [Alfalo Library Example.zip](https://github.com/m1ng2e/Alfalo/files/14968433/Alfalo.Library.Example.zip).  
+The layout in Figure 5 is generated with the AnyLogic model [Alfalo Library Example.zip](https://github.com/m1ng2e/Alfalo/files/14985211/Alfalo.Library.Example.zip).
+.  
 
 ![Layout Example](https://github.com/m1ng2e/Alfalo/assets/62451645/d27305b2-e332-40bf-a7d2-bbaab37a2b37)
 
