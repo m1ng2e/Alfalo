@@ -1,5 +1,5 @@
 # Alfalo
-Alfalo is an **A**ny**L**ogic Library for **Fa**st **L**ay**o**ut Generation. It provides a easy way to generate complex layout programmatically in AnyLogic Models. 
+Alfalo is an **A**ny**L**ogic Library for **Fa**st **L**ay**o**ut Generation. It provides a easy way to generate complex facility layouts programmatically from databases in AnyLogic Models. 
 
 **Use case:** 
 
